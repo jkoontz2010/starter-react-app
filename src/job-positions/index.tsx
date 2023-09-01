@@ -19,7 +19,7 @@ import { Location } from "../components/location";
 
 export const JobPositions = () => {
   const { isLoading, data, error } = useApi<JobsResponse>(JOBS_URL);
-  const { jobs: jobPositions } = data || {};
+  const { jobs: jobPositions, meta } = data || {};
 
   // keep separate from jobPositions so we can filter without losing the original value
   const [filteredJobPositions, setFilteredJobPositions] =
@@ -64,7 +64,9 @@ export const JobPositions = () => {
           ),
         }}
       />
-
+      <Typography variant="h6">
+        {filteredJobPositions?.length} positions found
+      </Typography>
       <List>
         {!isLoading &&
           filteredJobPositions?.map((jobPosition: JobPosition) => (
