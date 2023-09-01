@@ -19,7 +19,7 @@ import { Location } from "../components/location";
 
 export const JobPositions = () => {
   const { isLoading, data, error } = useApi<JobsResponse>(JOBS_URL);
-  const { jobs: jobPositions, meta } = data || {};
+  const { jobs: jobPositions } = data || {};
 
   // keep separate from jobPositions so we can filter without losing the original value
   const [filteredJobPositions, setFilteredJobPositions] =
