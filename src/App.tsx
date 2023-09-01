@@ -16,14 +16,14 @@ function App() {
       <div className="App">
       <AppBar position="relative">
         <Toolbar>
-          <Link component={RouterLink} to="/jobs" color="inherit">
+          <Link component={RouterLink} to="/" color="inherit">
             View Jobs
           </Link>
         </Toolbar>
       </AppBar>
         <CssBaseline />
         <Routes>
-          <Route path="/jobs" element={<JobPositions />} />
+          <Route path="/" element={<JobPositions />} />
 
           <Route path="jobs/:id" element={<JobDetail />} />
         </Routes>
